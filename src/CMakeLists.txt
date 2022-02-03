@@ -3,7 +3,7 @@ add_library( myslam SHARED
     MapPoint.cpp
     Map.cpp
     Camera.cpp
-    # config.cpp
+    Config.cpp
 )
 
 target_link_libraries( myslam

@@ -13,7 +13,7 @@ set( LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib )
 include_directories( "/usr/include/eigen3" )
 
 # OpenCV
-# find_package( OpenCV REQUIRED )
+find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS} )
 
 # Sophus 
@@ -25,7 +25,7 @@ include_directories( ${Sophus_INCLUDE_DIRS} )
 # include_directories( ${G2O_INCLUDE_DIRS} )
 
 set( THIRD_PARTY_LIBS 
-    # ${OpenCV_LIBS}
+    ${OpenCV_LIBS}
     Sophus::Sophus
     # g2o_core g2o_stuff g2o_types_sba
 )
