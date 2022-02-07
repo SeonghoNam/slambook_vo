@@ -2,6 +2,10 @@
 
 namespace myslam
 {
+    Map::Map()
+    {
+        
+    }
     void Map::insertKeyFrame(Frame::Ptr frame)
     {
         if(_keyframes.find(frame->_id) == _keyframes.end())

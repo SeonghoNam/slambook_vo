@@ -48,7 +48,7 @@ namespace myslam
             computeDescriptors();
             featureMatching();
             poseEstimationPnP();
-            if(checkEstimatedPose())
+            if(checkEstimatedPose() == true)
             {
                 _cur->_T_c_w = _T_c_r_estimated * _ref->_T_c_w;
                 _ref = _cur;
@@ -138,7 +138,7 @@ namespace myslam
         _num_inliers = inliers.rows;
         cout<<"pnp inliers: "<<_num_inliers<<endl;
         _T_c_r_estimated = SE3d(
-            Sophus::SO3d::hat(Vector3d(rvec.at<double>(0,0), rvec.at<double>(1,0), rvec.at<double>(2,0))), 
+            Sophus::SO3d::exp(Vector3d(rvec.at<double>(0,0), rvec.at<double>(1,0), rvec.at<double>(2,0))), 
             Vector3d( tvec.at<double>(0,0), tvec.at<double>(1,0), tvec.at<double>(2,0))
         );
     }

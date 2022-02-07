@@ -20,7 +20,7 @@ namespace myslam
         Frame(long id, double time_stamp = 0, SE3d T_c_w=SE3d(), Camera::Ptr cam = nullptr, Mat color = Mat(), Mat depth = Mat());
         ~Frame();
 
-        Frame::Ptr createFrame();
+        static Frame::Ptr createFrame();
         double findDepth(const cv::KeyPoint& kp);
         Vector3d getCamCenter() const;
         bool isInFrame(const Vector3d& pt_world);
